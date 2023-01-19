@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title></title>
+</head>
+
+<body>
+    <div class="navbar">
+        <ul>
+            <li style="float:left">
+                <h3>Project-1</h3>
+            </li>
+            <li><a href="#facts">Facts</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#arabic">Arabic Lang</a></li>
+            <li><a href="#sliding-image">Gallery</a></li>
+        </ul>
+    </div>
+
+    <!-- sliding-image -->
+    <div class="sliding-image" id="sliding-image">
+        <h1>Photo Gallery</h1>
+        <h3>Automatic Image slider</h3>
+        <div class="container">
+            <canvas id="slider" width="800" height="800"></canvas>
+            </section>
+            <script>
+
+                var images = [
+                    "img/1.jpg",
+                    "img/2.jpg",
+                    "img/3.jpg",
+                    "img/4.jpg"
+
+                ];
+
+                var currentImage = 0;
+
+                var canvas = document.getElementById('slider');
+                var ctx = canvas.getContext('2d');
+                function nextimage() {
+                    currentImage++;
+                    if (currentImage >= images.length) {
+                        currentImage = 0;
+                    }
+                    var img = new Image();
+                    img.src = images[currentImage];
+                    img.onload = function () {
+                        ctx.clearRect(0, 0, 900, 500);
+                        ctx.drawImage(img, 0, 0, 900, 500);
+                    }
+                };
+                setInterval(nextimage, 2500);
+                nextimage();
+
+            </script>
+
+        </div>
+    </div>
+
+
+    <!-- Arabic language -->
+    <div class="arabic" id="arabic">
+        <div class="main">
+            <form class="form" method="post" id="myForm">
+                <h1> Arabic Language</h1>
+                <label>Enter something in Arabic language</label>
+                <input id="arabic_input" type="text" pattern="[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF]+"
+                    onchange="display_text()" required />
+                <span class="error-messege" aria-live="polite"></span>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="text-display">
+            <p id="display"></p>
+        </div>
+    </div>
+    <script>
+        var textFieldValue;
+
+        document.getElementById("myForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            textFieldValue = document.getElementById("arabic_input").value;
+            display.innerHTML = "Successful! You have entered: " + textFieldValue;
+        });
+
+
+    </script>
+
+
+
+    <!-- news style with css -->
+    <div class="news" id="news">
+        <div class="heading">
+            <h1>Arab world revels in Saudi win over Argentina at World Cup</h1>
+            <h3>News Style with CSS</h3>
+            <img src="img/5.jpg">
+            <table>
+                <colgroup>
+                    <col span="2">
+                </colgroup>
+                <tr>
+                    <td style="width:50%">LUSAIL, Qatar: Overjoyed fans erupted in celebration around
+                        the Arab world Tuesday after Saudi Arabia’s shocking World Cup win
+                        over Argentina.From Syria and Jordan to Gaza and Qatar — host of this year’s World Cup — fans
+                        basked in Saudi Arabia’s achievement, one of the biggest upsets in the tournament’s history.
+
+                        Immediately after their team’s 2-1 come-from-behind victory, Saudi fans
+                        who witnessed the match in person flooded the streets outside Lusail Stadium
+                        waving their country’s green and white
+                        flags while chanting and singing — and even hugging distraught Argentina fans.“I’m speechless,”
+                        Saudi Arabia fan Sultan Alharthi said. “I can’t even explain how much happy I am, because
+                        I didn’t expect we will win.
+
+                        Qatar’s ruling emir, Sheikh Tamim bin Hamad Al Thani, attended the match, and at one point
+                        wrapped a Saudi flag over his shoulders.
+                        The moment, captured in online video and widely shared, would have been unthinkable nearly two
+                        years ago when Saudi Arabia and three other Arab
+                        nations boycotted Qatar over a political dispute.
+
+                        In northwestern Syria, the war-torn country’s rebel stronghold, residents gathered at cafes
+                        cheered and celebrated after the final whistle.
+                        It was a pleasant change for the enclave, where millions suffer from frequent airstrikes and
+                        poverty.
+
+                        In the city of Idlib, Ahmad Al-Absi said Saudi Arabia’s victory was a much
+                        needed morale boost for Syrians and Arabs across the Middle East, even if it meant seeing his
+                        favorite soccer team lose.
+                        “It shows that we have talented people who can achieve things on a global stage,” Al-Absi, an
+                        Argentina fan, told The Associated Press. “We’re dreaming of better futures as Arabs, and this
+                        morale boosts reminds us that nothing is impossible.”
+
+                        In the streets of Amman, Jordan, dozens of Saudi nationals and Jordanians celebrated in the
+                        streets, carrying Saudi flags or placing them on their cars and blaring their horns.
+
+
+                    </td>
+
+                    <td style="width:50%"> “They stand with us politically and socially, so these celebrations are sort
+                        of reciprocation,” said Gaza resident Abu Khalil.
+                        “It shows that we have talented people who can achieve things on a global stage,” Al-Absi, an
+                        Argentina fan, told The Associated Press. “We’re dreaming of better futures as Arabs, and this
+                        morale boosts reminds us that nothing is impossible.”
+
+                        In the streets of Amman, Jordan, dozens of Saudi nationals and Jordanians celebrated in the
+                        streets, carrying Saudi flags or placing them on their cars and blaring their horns.
+
+                        And in Gaza, Palestinian residents rejoiced, saying they stood with Saudi Arabia in its moment
+                        of soccer glory. “They stand with us politically and socially, so these celebrations are sort of
+                        reciprocation,” said Gaza resident Abu Khalil.
+
+                        In Saudi Arabia, King Salman announced a snap public holiday for all workers and students in the
+                        kingdom in celebration of the win.
+
+                        People watching the match at a fan zone in the capital, Riyadh, jumped with joy and cheered as
+                        the game ended. Drivers honked their horns in celebration. Saudi authorities also allowed free
+                        entry to a state-sponsored sports and entertainment festival.
+
+                        The gravity of the victory will eventually sink in. Saudi Arabia is a team that had only ever
+                        won three World Cup matches in its history prior to Tuesday’s game. Argentina, which won the
+                        World Cup in 1978 and 1986, is — or was — one of the favorites this year.
+
+                        “One for the books,” Saudi Arabia coach Hervé Renard said. “Sometimes things are completely
+                        crazy.”
+
+                        Saudi goalkeeper Mohammed Alowais, who made two key saves late in the game, was almost subdued
+                        at the end, perhaps not grasping the magnitude of the upset.
+
+                        “I am very happy about this result that we have been able to obtain against this very storied
+                        team,” Alowais said solemnly. “We have prepared ourselves. We were 100 percent ready and
+                        hopefully we will have better results in the future.”</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- List and grid -->
+    <div class="row" id="facts">
+        <h1>Interesting Facts to Know about the Arab Culture</h1>
+        <h3>Content in List when maximized and in grid when small</h3>
+        <div class="list">
+            <div class="text text1">
+                Arab people do not eat pork, many carnivorous animals, and sea animals without scales. Alcohol is one of
+                the primary bans in most of the Arabic countries.
+                All animals they eat are slaughtered in accordance with the Islamic rules. Mutton is the most popular
+                type of meat. As per the Arabic culinary culture and
+                lifestyle, guests are always
+                offered snacks, tea, or coffee, and refusing these offers is considered rude since they present their
+                friendship and respect together with these.
+            </div>
+            <div class="text text1">
+                Arabic counties range Morocco to North Africa, and from there to the Persian Gulf. This region
+                is also called the MENA (the Middle East and North Africa) region. The Arab World consists of 22
+                countries which are: Algeria, Bahrain, the Comoros Island, Djibouti, Egypt, Libya, Iraq, Syrian, Jordan,
+                Kuwait, Lebanon, Tunisia,
+                Sudan, Saudi Arabia, United Arab Emirates, Palestine, Qatar, Somalia, Mauritania, Oman, Morocco, Yemen.
+
+            </div>
+            <div class="text text1">
+                The Middle Easterners are flexible about the time of the meeting, a delay is not perceived
+                as a sign of disrespect. In the Arabic culture, greetings are done with men by shaking hands
+                according to the order of seniority; and never
+                attempt to shake hands with an Arab woman unless she reaches out for it.
+            </div>
+            <div class="text text1">
+                In the Arabic culture, giving gifts is suitable if the meeting takes place at home,
+                and the gift must be packed. The packages are not opened in front of the gift giver and the
+                gifts offered must not be rejected more than twice for the shake respect.
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
